@@ -32,14 +32,14 @@ def do_work(RESOURCE_URI):
     validate_wo(wo)
     
     # Start work
-    requests.post(BASE_URI+wo['start'], data="Started brewing {0}".format(RESOURCE_URI))
+    requests.post(BASE_URI+wo['start'], data={"coffee": "Started brewing {0}".format(RESOURCE_URI)})
 
     print("    Brewing {0}.".format(RESOURCE_URI))
     coffee = make_coffee( wo )
     print(coffee)
     
     # Done
-    requests.post(BASE_URI+wo['complete'], coffee=coffee)
+    requests.post(BASE_URI+wo['complete'], data={'coffee': coffee})
 
 def validate_wo( work ):
     if work.get('type', None) != 'http://mogsie.com/2013/workflow/restfest-coffee':
