@@ -75,4 +75,4 @@ if __name__ == '__main__':
         print("Looking for work...")
         look_for_work()
         print("No more work, sleeping...")
-        time.sleep(30)
+        time.sleep(10)
