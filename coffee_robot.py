@@ -14,6 +14,15 @@ def make_coffee( work ):
 
     attrs = work['input']
 
-    coffee = attrs['drink-type']
+    if attrs.get('drink-type', None) is None:
+        raise Exception('drink-type must be specified')
+    if attrs.get('size', None) is None:
+        raise Exception('size must be specified')
+
+    coffee = attrs['size'] + ' ' + attrs['drink-type']
+
+    if attrs['addons']:
+        for a in attrs['addons']:
+            coffee = coffee + ' ' + a['amount'] + ' of ' + a['type']
 
     return coffee
