@@ -1,18 +1,19 @@
 { 
-    'type': 'restfest-coffee',
-    'input': {
-        'drink-type' : 'mocha',
-        'size': 'small'
+    "type": "restfest-coffee",
+    "input": {
+        "drink-type" : "mocha",
+        "size": "small"
     }
 },
 { 
-    'type': 'restfest-coffee',
-    'input': {
-        'drink-type' : 'coffee',
-        'size' : 'medium',
-		'addons' : [
-			{ 'type' : 'half and half', 'amount' : '2oz' },
-			{ 'type' : 'sugar',         'amount' : '1 cube' }
+    "type": "restfest-coffee",
+    "input": {
+        "drink-type" : "coffee",
+        "size" : "medium",
+		"addons" : [
+			{ "type" : "half and half", "amount" : "2oz" },
+			{ "type" : "sugar",         "amount" : "1 cube" }
 		]
     }
-}
+},
+{"input":{"addons":[{"amount":"2oz","type":"half and half"},{"amount":"1 cube","type":"sugar"}],"drink-type":"americano","size":"large"},"type":"http://mogsie.com/2013/workflow/restfest-coffee","complete":"/coffee/29711.complete","status":"/coffee/29711.status","fail":"/coffee/29711.fail","start":"/coffee/29711.start"}

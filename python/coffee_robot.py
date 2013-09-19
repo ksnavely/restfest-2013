@@ -22,6 +22,7 @@ def look_for_work():
             do_work(i['href'])
         except Exception as ex:
             print("! An exception occurred: {0}".format(str(ex)))
+            exit()
 
 def do_work(RESOURCE_URI):
     URI = BASE_URI + RESOURCE_URI
@@ -35,8 +36,12 @@ def do_work(RESOURCE_URI):
     requests.post(BASE_URI+wo['start'], data={"coffee": "Started brewing {0}".format(RESOURCE_URI)})
 
     print("    Brewing {0}.".format(RESOURCE_URI))
-    coffee = make_coffee( wo )
-    print(coffee)
+    try:
+        coffee = make_coffee( wo )
+        print("    Coffee done: " + coffee)
+    except:
+        requests.post(BASE_URI+wo['fail'], data={"coffee": "Exception: {0}".format(ex)})
+        exit()
     
     # Done
     requests.post(BASE_URI+wo['complete'], data={'coffee': coffee})
@@ -70,4 +75,4 @@ if __name__ == '__main__':
         print("Looking for work...")
         look_for_work()
         print("No more work, sleeping...")
-        time.sleep(30)
+        time.sleep(10)
