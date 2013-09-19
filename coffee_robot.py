@@ -2,7 +2,11 @@ coffee_order = {
     'type': 'restfest-coffee',
     'input': {
         'drink-type' : 'mocha',
-        'size': 'small'
+        'size': 'small',
+        'addons' : [
+            { 'type' : 'half and half', 'amount' : '2oz' },
+            { 'type' : 'sugar',         'amount' : '1 cube' }
+        ]
     }
 }
 
@@ -26,3 +30,6 @@ def make_coffee( work ):
             coffee = coffee + ' ' + a['amount'] + ' of ' + a['type']
 
     return coffee
+
+if __name__ == '__main__':
+    print(make_coffee(coffee_order))
