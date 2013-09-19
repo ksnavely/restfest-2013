@@ -4,16 +4,15 @@
         'drink-type' : 'mocha',
         'size': 'small'
     }
-}
-
+},
 { 
     'type': 'restfest-coffee',
     'input': {
         'drink-type' : 'coffee',
-        'size' : 'medium'
-		'addons' : {
-			{ 'type' : 'half and half', 'amount' : '2oz' }
+        'size' : 'medium',
+		'addons' : [
+			{ 'type' : 'half and half', 'amount' : '2oz' },
 			{ 'type' : 'sugar',         'amount' : '1 cube' }
-		}
+		]
     }
 }
